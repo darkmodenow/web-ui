@@ -12,7 +12,6 @@ import { initializeApp } from 'firebase/app';
 
 const queryClient = new QueryClient();
 
-console.log("🔥 VITE_APIKEY during build:", import.meta.env.VITE_APIKEY);
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_APIKEY,
