@@ -12,7 +12,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repo
+        uses: actions/checkout@v4
 
       - name: Create .env file
         run: |
@@ -24,12 +25,16 @@ jobs:
           echo VITE_MESSAGINGSENDERID=${{ secrets.VITE_MESSAGINGSENDERID }} >> .env
           echo VITE_APPID=${{ secrets.VITE_APPID }} >> .env
           echo VITE_MEASUREMENTID=${{ secrets.VITE_MEASUREMENTID }} >> .env
-          cat .env  # Optional: Remove if you don't want secrets in logs
+          echo Created .env file
 
-      - run: npm ci
-      - run: npm run build
+      - name: Install dependencies
+        run: npm ci
 
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+      - name: Build the project
+        run: npm run build
+
+      - name: Deploy to Firebase Hosting
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_DARKMODENOW_72BC9 }}

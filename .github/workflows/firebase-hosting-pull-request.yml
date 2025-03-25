@@ -27,8 +27,6 @@ jobs:
           echo VITE_MESSAGINGSENDERID=${{ secrets.VITE_MESSAGINGSENDERID }} >> .env
           echo VITE_APPID=${{ secrets.VITE_APPID }} >> .env
           echo VITE_MEASUREMENTID=${{ secrets.VITE_MEASUREMENTID }} >> .env
-          cat .env  # optional: to verify output in logs (don't do this for secrets!)
-
       - run: npm ci
       - run: npm run build
 
