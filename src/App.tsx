@@ -9,12 +9,8 @@ import EmbedPage from "./pages/embed";
 import { useEffect, useState } from 'react';
 import { getFirestore, collection, getDocs } from 'firebase/firestore';
 import { initializeApp } from 'firebase/app';
-import process from 'process';
 
 const queryClient = new QueryClient();
-
-console.log("hiii");
-console.log(process.env.APIKEY);
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_APIKEY,
