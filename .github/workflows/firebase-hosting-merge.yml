@@ -15,9 +15,9 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Create .env file
+      - name: Create .env file at root
         run: |
-          touch .env
+          echo "Creating .env file in $(pwd)"
           echo VITE_APIKEY=${{ secrets.VITE_APIKEY }} >> .env
           echo VITE_AUTHDOMAIN=${{ secrets.VITE_AUTHDOMAIN }} >> .env
           echo VITE_PROJECTID=${{ secrets.VITE_PROJECTID }} >> .env
@@ -25,7 +25,8 @@ jobs:
           echo VITE_MESSAGINGSENDERID=${{ secrets.VITE_MESSAGINGSENDERID }} >> .env
           echo VITE_APPID=${{ secrets.VITE_APPID }} >> .env
           echo VITE_MEASUREMENTID=${{ secrets.VITE_MEASUREMENTID }} >> .env
-          echo Created .env file
+          echo "✅ .env file created"
+
 
       - name: Install dependencies
         run: npm ci
