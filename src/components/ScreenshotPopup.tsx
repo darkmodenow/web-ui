@@ -6,7 +6,7 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog"
-import { X, Share2, Check, Copy, Code } from "lucide-react"
+import { Share2, Check, Copy, Code } from "lucide-react"
 import { EmbeddableBadge } from "./EmbeddableBadge"
 
 interface WebsiteData {
@@ -21,7 +21,7 @@ interface WebsiteData {
 interface ScreenshotPopupProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  websiteData?: WebsiteData;
+  websiteData: WebsiteData;
 }
 
 export function ScreenshotPopup({ open, onOpenChange, websiteData }: ScreenshotPopupProps) {
@@ -38,16 +38,9 @@ export function ScreenshotPopup({ open, onOpenChange, websiteData }: ScreenshotP
           <DialogTitle className="text-lg font-semibold text-zinc-100">
             {websiteData.website}
           </DialogTitle>
-          <DialogDescription className="text-zinc-400 text-sm">
+          {/* <DialogDescription className="text-zinc-400 text-sm">
             <span className="text-xs">Analyzed on {formatDate(websiteData.analyzed_at)}</span>
-          </DialogDescription>
-          <button
-            onClick={() => onOpenChange(false)}
-            className="absolute right-4 top-4 rounded-sm text-zinc-400 opacity-70 transition-opacity hover:opacity-100 hover:text-zinc-100"
-          >
-            <X className="h-4 w-4" />
-            <span className="sr-only">Close</span>
-          </button>
+          </DialogDescription> */}
         </DialogHeader>
         <div className="flex flex-col gap-4">
           {websiteData.screenshot && (

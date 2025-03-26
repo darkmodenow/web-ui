@@ -465,8 +465,8 @@ const Index = ({ data }: { data: FirestoreData[] }) => {
             <div style={styles.metricIcon}>
               <i className="fas fa-tree" style={{ fontSize: '24px', color: '#54f5a2' }}></i>
             </div>
-            <div style={styles.metricValue}>28.5M</div>
-            <div style={styles.metricLabel}>Metric Tons CO₂ Reduction</div>
+            <div style={styles.metricValue}>18.7M</div>
+            <div style={styles.metricLabel}>New Trees</div>
           </div>
 
           <div style={styles.equalsSign}>=</div>
@@ -475,7 +475,7 @@ const Index = ({ data }: { data: FirestoreData[] }) => {
             <div style={styles.metricIcon}>
               <i className="fas fa-car" style={{ fontSize: '24px', color: '#54f5a2' }}></i>
             </div>
-            <div style={styles.metricValue}>6.2M</div>
+            <div style={styles.metricValue}>89.3K</div>
             <div style={styles.metricLabel}>Cars Removed</div>
           </div>
 
@@ -486,7 +486,7 @@ const Index = ({ data }: { data: FirestoreData[] }) => {
               <i className="fas fa-lightbulb" style={{ fontSize: '24px', color: '#54f5a2' }}></i>
             </div>
             <div style={styles.metricValue}>102.7M</div>
-            <div style={styles.metricLabel}>Lightbulbs</div>
+            <div style={styles.metricLabel}>Lightbulbs Turned Off</div>
           </div>
         </div>
 
@@ -522,6 +522,7 @@ const Index = ({ data }: { data: FirestoreData[] }) => {
         open={showTutorial} 
         onOpenChange={setShowTutorial}
         onComplete={handleTutorialComplete}
+        existingDomains={data}
       />
 
       {showPopup && selectedWebsite && (
