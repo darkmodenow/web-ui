@@ -705,9 +705,9 @@ export function DarkModeTutorial({ open, onOpenChange, onComplete, existingDomai
                       <CollapsibleContent className="pt-4">
                         <div className="p-4 bg-zinc-800/50 rounded-xl border border-zinc-700/50">
                           <ol className="list-decimal list-inside space-y-3 text-zinc-300">
-                            <li>Copy the code snippet that matches your tech stack</li>
-                            <li>Add the code to your project's main layout or component file</li>
-                            <li>Customize the styles to match your website's design</li>
+                            <li>Copy the code snippet that matches your tech stack.</li>
+                            <li>Add the code to your project's main layout or component file.</li>
+                            <li>Customize the styles to match your website's design.</li>
                           </ol>
                         </div>
                       </CollapsibleContent>
